@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="./favicon.png" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#7F77DD" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <title>研食记 · Pantry</title>
+    <script>
+      // Self-healing against stale service-worker shells. Runs as a classic
+      // inline script so it works even if the module bundle fails to load
+      // (the cause of a white screen after a deploy). When a NEW service worker
+      // takes control, reload once to pick up matching, non-404 assets.
+      (function () {
+        if (!("serviceWorker" in navigator)) return;
+        var had = !!navigator.serviceWorker.controller;
+        navigator.serviceWorker.addEventListener("controllerchange", function () {
+          if (!had) { had = true; return; }
+          window.location.reload();
+        });
+      })();
+    </script>
+    <script type="module" crossorigin src="./assets/index-BDkH55IQ.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-Dxtm33UT.css">
+  <link rel="manifest" href="./manifest.webmanifest"></head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
